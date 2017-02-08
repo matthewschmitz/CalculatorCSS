@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)file:///C:/Users/matthew.schmitz/AppData/Local/Temp/Temp1_HTML%20Dropdown%20Glitch.zip/Testing%20with%20Dropdowns.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="Test.css">
+
+		
+	
+		<title>APEXA Savings Calculator</title>
+	
+		<script>
+
+			var period = 'monthly';
+
+			var hoursPerDay = 8;
+
+			function triggerMonthly() {
+
+				period = 'monthly';
+
+				return period
+
+			}
+
+			function triggerYearly() {
+
+				period = 'yearly';
+
+				return period
+
+			}
+
+			function calculateNIGOC() {
+
+				var volumeNIGOC = document.getElementById('volumeNIGOC').value;
+				
+				var timeNIGOC = document.getElementById('timeNIGOC').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsNIGOC = volumeNIGOC * timeNIGOC * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsNIGOC = volumeNIGOC * timeNIGOC / (60 * hoursPerDay);
+				}
+
+				savingsNIGOC = savingsNIGOC.toFixed(2);
+
+				document.getElementById('savingsNIGOC').innerHTML= 'You\'ll save ' + savingsNIGOC.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA stops contracts from being submitted if requirements to process the contract are not included (ex. Advisor is not licensed). Take this task off your plate!';
+
+				if (volumeNIGOC <= 0 || timeNIGOC <= 0) {
+					document.getElementById('savingsNIGOC').style.display = 'none';
+				} else {
+					document.getElementById('savingsNIGOC').style.display = 'inline-block';
+				}
+
+				return savingsNIGOC;
+			
+			}
+
+			function calculateVOL() {
+
+				var volumeVOL = document.getElementById('volumeVOL').value;
+				
+				var timeVOL = document.getElementById('timeVOL').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsVOL = volumeVOL * timeVOL * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsVOL = volumeVOL * timeVOL / (60 * hoursPerDay);
+				}
+
+				savingsVOL = savingsVOL.toFixed(2);
+
+				if (volumeVOL <= 0 || timeVOL <= 0) {
+					document.getElementById('savingsVOL').style.display = 'none';
+				} else {
+					document.getElementById('savingsVOL').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsVOL').innerHTML= 'You\'ll save ' + savingsVOL.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA validates all licenses against regulator records. Take this task off your plate!';
+
+				return savingsVOL;
+			
+			}
+
+			function calculateVOEO() {
+
+				var volumeVOEO = document.getElementById('volumeVOEO').value;
+				
+				var timeVOEO = document.getElementById('timeVOEO').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0 || hoursPerDay > 24) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsVOEO = volumeVOEO * timeVOEO * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsVOEO = volumeVOEO * timeVOEO / (60 * hoursPerDay);
+				}
+
+				savingsVOEO = savingsVOEO.toFixed(2);
+
+				if (volumeVOEO <= 0 || timeVOEO <= 0) {
+					document.getElementById('savingsVOEO').style.display = 'none';
+				} else {
+					document.getElementById('savingsVOEO').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsVOEO').innerHTML= 'You\'ll save ' + savingsVOEO.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA validates that the E&O certificate meets provincial and corporate minimums. Take this task off your plate!';
+
+				return savingsVOEO;
+			
+			}
+
+			function calculateCC() {
+
+				var volumeCC = document.getElementById('volumeCC').value;
+				
+				var timeCC = document.getElementById('timeCC').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsCC = volumeCC * timeCC * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsCC = volumeCC * timeCC / (60 * hoursPerDay);
+				}
+
+				savingsCC = savingsCC.toFixed(2);
+
+				if (volumeCC <= 0 || timeCC <= 0) {
+					document.getElementById('savingsCC').style.display = 'none';
+				} else {
+					document.getElementById('savingsCC').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsCC').innerHTML= 'You\'ll save ' + savingsCC.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA sends you a criminal check for every new relationship. The cost is included in your fee. Take this task off your plate!';
+
+				return savingsCC;
+			
+			}
+
+			function calculateCrC() {
+
+				var volumeCrC = document.getElementById('volumeCrC').value;
+				
+				var timeCrC = document.getElementById('timeCrC').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsCrC = volumeCrC * timeCrC * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsCrC = volumeCrC * timeCrC / (60 * hoursPerDay);
+				}
+
+				savingsCrC = savingsCrC.toFixed(2);
+
+				if (volumeCrC <= 0 || timeCrC <= 0) {
+					document.getElementById('savingsCrC').style.display = 'none';
+				} else {
+					document.getElementById('savingsCrC').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsCrC').innerHTML= 'You\'ll save ' + savingsCrC.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA sends you a credit check for every new relationship. The cost is included in your fee. Take this task off your plate!';
+
+				return savingsCrC;
+			
+			}
+
+			function calculateUAR() {
+
+				var volumeUAR = document.getElementById('volumeUAR').value;
+				
+				var timeUAR = document.getElementById('timeUAR').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsUAR = volumeUAR * timeUAR * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsUAR = volumeUAR * timeUAR / (60 * hoursPerDay);
+				}
+
+				savingsUAR = savingsUAR.toFixed(2);
+
+				if (volumeUAR <= 0 || timeUAR <= 0) {
+					document.getElementById('savingsUAR').style.display = 'none';
+				} else {
+					document.getElementById('savingsUAR').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsUAR').innerHTML= 'You\'ll save ' + savingsUAR.bold() + ' days '.bold() + 'yearly by using APEXA because advisors make all updates to their profile and you will receive these updates automatically. Take these changes off your plate!';
+
+				return savingsUAR;
+			
+			}
+
+			function calculateROL() {
+
+				var volumeROL = document.getElementById('volumeROL').value;
+				
+				var timeROL = document.getElementById('timeROL').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsROL = volumeROL * timeROL * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsROL = volumeROL * timeROL / (60 * hoursPerDay);
+				}
+
+				savingsROL = savingsROL.toFixed(2);
+
+				if (volumeROL <= 0 || timeROL <= 0) {
+					document.getElementById('savingsROL').style.display = 'none';
+				} else {
+					document.getElementById('savingsROL').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsROL').innerHTML= 'You\'ll save ' + savingsROL.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA tracks, monitors, and validates license renewals against the regulator\'s records. Take this task off your plate!';
+
+				return savingsROL;
+			
+			}
+
+			function calculateROEO() {
+
+				var volumeROEO = document.getElementById('volumeROEO').value;
+				
+				var timeROEO = document.getElementById('timeROEO').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsROEO = volumeROEO * timeROEO * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsROEO = volumeROEO * timeROEO / (60 * hoursPerDay);
+				}
+
+				savingsROEO = savingsROEO.toFixed(2);
+
+				if (volumeROEO <= 0 || timeROEO <= 0) {
+					document.getElementById('savingsROEO').style.display = 'none';
+				} else {
+					document.getElementById('savingsROEO').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsROEO').innerHTML= 'You\'ll save ' + savingsROEO.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA tracks, monitors, and validates E&O certificate renewals to meet provincial and corporate requirements. Take this task off your plate!';
+
+				return savingsROEO;
+			
+			}
+
+			function calculateAI() {
+
+				var volumeAI = document.getElementById('volumeAI').value;
+				
+				var timeAI = document.getElementById('timeAI').value;
+
+				hoursPerDay = document.getElementById('hoursPerDay').value;
+
+				if (hoursPerDay <= 0) {
+					hoursPerDay = 8;
+				}
+
+				if (period == 'monthly') {
+					var savingsAI = volumeAI * timeAI * 12 / (60 * hoursPerDay);
+				} else {
+					var savingsAI = volumeAI * timeAI / (60 * hoursPerDay);
+				}
+
+				savingsAI = savingsAI.toFixed(2);
+
+				if (volumeAI <= 0 || timeAI <= 0) {
+					document.getElementById('savingsAI').style.display = 'none';
+				} else {
+					document.getElementById('savingsAI').style.display = 'inline-block';
+				}
+
+				document.getElementById('savingsAI').innerHTML= 'You\'ll save ' + savingsAI.bold() + ' days '.bold() + 'yearly by using APEXA. APEXA handles advisor calls so users are directed to us, not you. They can also make requests, check the status, and update information online. Take this task off your plate!';
+
+				return savingsAI;
+			
+			}
+
+			function calculate() {
+
+				var totalSavings = parseFloat(calculateNIGOC()) + parseFloat(calculateVOL()) + parseFloat(calculateVOEO()) + parseFloat(calculateCC()) + parseFloat(calculateCrC()) + parseFloat(calculateUAR()) + parseFloat(calculateROL()) + parseFloat(calculateROEO()) + parseFloat(calculateAI());
+
+				if (totalSavings <= 0) {
+					document.getElementById('result').innerHTML= "Please enter valid and accurate numbers in the form above.";
+				} else {
+					document.getElementById('result').innerHTML= 'You\'ll save ' + totalSavings + ' days yearly by using APEXA.';
+				}
+
+			}
+
+		</script>
+
+</head>
+
+	<body>
+	
+		<div class="sectionBanner">
+				
+			<div class="sectionBannerText">Preliminary Information</div>
+			
+		</div>
+
+
+
+
+		<div id="preliminaryQuestions">
+				
+			<form>
+
+				<div id="preliminaryQuestionsPeriod">
+					
+					<!-- Question -->
+					<p class="questionText">Calculations based on monthly or yearly numbers?</p>
+
+					<!-- Radio Buttons -->
+					<input type="radio" id="monthlyVsYearly" name="monthlyVsYearly" value="Monthly" onclick="triggerMonthly();"><span class="radioButtons">Monthly</span><br>
+					<input type="radio" id="monthlyVsYearly" name="monthlyVsYearly" value="Yearly" onclick="triggerYearly();"><span class="radioButtons">Yearly</span><br>
+				
+				</div>
+
+				<div id="preliminaryQuestionsHours">
+					
+					<!-- Question -->
+					<p class="questionText" id="hoursQuestion">How many hours do you work per day?</p>
+					
+					<input type="number" id="hoursPerDay" placeholder="Hours per day">
+
+				</div>
+
+			</form>
+
+		</div>
+
+		
+
+
+		<div class="sectionBanner">
+				
+			<div class="sectionBannerText">Initial Requirements</div>
+	
+		</div>
+
+		<div id="initialRequirementsQuestions">
+					
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Not in good order contracts</div>
+		
+				<div class="dropdown-content">
+		
+					<p>Not in good order contracts are contracts that are missing requirements. These typically create a backlog in processing contracts.</p>
+		
+			  	</div>
+
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+					
+					<div class="questionInputs">
+					
+						<table>
+					
+							<tbody>
+					
+								<tr>
+					
+									<td class="input"><input type="number" id="volumeNIGOC" onchange="calculateNIGOC();" placeholder="Yearly volume"></td>
+					
+									<td class="input"><input type="number" id="timeNIGOC" onchange="calculateNIGOC();" placeholder="Minutes per transaction"></td>
+					
+								</tr>
+					
+								<tr>
+					
+									<td colspan="2"><div class="savingsOutput" id="savingsNIGOC"></div></td>
+					
+								</tr>
+					
+							</tbody>
+					
+						</table>
+					
+					</div>
+				
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Validation of license</div>
+
+				<div class="dropdown-content">
+					
+					<p>Provincial licensing is a requirement by law that must be validated against regulator records.</p>
+			  	
+			  	</div>
+
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+					
+					<div class="questionInputs">
+
+						<table>
+						
+							<tbody>
+						
+								<tr>
+						
+									<td><input type="number" id="volumeVOL" onchange="calculateVOL();" placeholder="Yearly volume"></td>
+						
+									<td><input type="number" id="timeVOL" onchange="calculateVOL();" placeholder="Minutes per transaction"></td>
+						
+								</tr>
+						
+								<tr>
+						
+									<td colspan="2"><div class="savingsOutput" id="savingsVOL"></div></td>
+						
+								</tr>
+						
+							</tbody>
+						
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Validation of E&O Certificates</div>
+
+				<div class="dropdown-content">
+					
+					<p>Valid Errors and Omissions (E&O) insurance is a requirement by law that must meet provincial and corporate minimums.</p>
+				
+				</div>
+				
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+						
+							<tbody>
+						
+								<tr>
+						
+									<td><input type="number" id="volumeVOEO" onchange="calculateVOEO();" placeholder="Yearly volume"></td>
+						
+									<td><input type="number" id="timeVOEO" onchange="calculateVOEO();" placeholder="Minutes per transaction"></td>
+						
+								</tr>
+						
+								<tr>
+						
+									<td colspan="2"><div id="savingsVOEO" class="savingsOutput"></div></td>
+						
+								</tr>
+						
+							</tbody>
+						
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Criminal Checks</div>
+
+				<div class="dropdown-content">
+			
+					<p>Criminal checks are used to screen new and existing advisors for suitability.</p>
+			
+			  	</div>
+			
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+					
+							<tbody>
+					
+								<tr>
+					
+									<td><input type="number" id="volumeCC" onchange="calculateCC();" placeholder="Yearly volume"></td>
+					
+									<td><input type="number" id="timeCC" onchange="calculateCC();" placeholder="Minutes per transaction"></td>
+					
+								</tr>
+					
+								<tr>
+					
+									<td colspan="2"><div id="savingsCC" class="savingsOutput"></div></td>
+					
+								</tr>
+					
+							</tbody>
+					
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Credit Checks</div>
+
+				<div class="dropdown-content">
+				
+					<p>Credit Checks are used to screen new and existing advisors for suitability.</p>
+				
+				</div>
+			
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+						
+							<tbody>
+						
+								<tr>
+						
+									<td><input type="number" id="volumeCrC" onchange="calculateCrC();" placeholder="Yearly volume"></td>
+						
+									<td><input type="number" id="timeCrC" onchange="calculateCrC();" placeholder="Minutes per transaction"></td>
+						
+								</tr>
+						
+								<tr>
+						
+									<td colspan="2"><div id="savingsCrC" class="savingsOutput"></div></td>
+						
+								</tr>
+						
+							</tbody>
+						
+						</table>
+
+					</div>
+			
+				</div>
+
+			</form>
+
+		</div>
+
+
+
+
+		<div class="sectionBanner">
+
+			<div class="sectionBannerText">Ongoing Maintenance</div>
+
+		</div>
+
+		<div class="ongoingMaintenanceQuestions">
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Updating Advisor Records</div>
+
+				<div class="dropdown-content">
+				
+					<p>Advisor records updates include changes to legal names, addresses, contact information, banking, etc.</p>
+				
+				</div>
+			
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+						
+							<tbody>
+						
+								<tr>
+						
+									<td><input type="number" id="volumeUAR" onchange="calculateUAR();" placeholder="Yearly volume"></td>
+						
+									<td><input type="number" id="timeUAR" onchange="calculateUAR();" placeholder="Minutes per transaction"></td>
+						
+								</tr>
+						
+								<tr>
+						
+									<td colspan="2"><div id="savingsUAR" class="savingsOutput"></div></td>
+						
+								</tr>
+						
+							</tbody>
+						
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Renewals of Licenses</div>
+
+				<div class="dropdown-content">
+				
+					<p>Provincial licensing is a requirement by law and is required to be vaild at all times.</p>
+			  	
+			  	</div>
+			
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+					
+							<tbody>
+					
+								<tr>
+					
+									<td><input type="number" id="volumeROL" onchange="calculateROL();" placeholder="Yearly volume"></td>
+					
+									<td><input type="number" id="timeROL" onchange="calculateROL();" placeholder="Minutes per transaction"></td>
+					
+								</tr>
+					
+								<tr>
+					
+									<td colspan="2"><div id="savingsROL" class="savingsOutput"></div></td>
+					
+								</tr>
+					
+							</tbody>
+					
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Renewals of E&O Certificates</div>
+
+				<div class="dropdown-content">
+			
+					<p>E&O insurance is a requirement by law and is required to be valid at all times.</p>
+			
+			  	</div>
+			
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+					
+							<tbody>
+					
+								<tr>
+					
+									<td><input type="number" id="volumeROEO" onchange="calculateROEO();" placeholder="Yearly volume"></td>
+					
+									<td><input type="number" id="timeROEO" onchange="calculateROEO();" placeholder="Minutes per transaction"></td>
+					
+								</tr>
+					
+								<tr>
+					
+									<td colspan="2"><div id="savingsROEO" class="savingsOutput"></div></td>
+					
+								</tr>
+					
+							</tbody>
+					
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+
+			<div class="questionBanner">
+
+				<div class="questionBannerText">Advisor Inquiries</div>
+
+			</div>
+
+			<form>
+
+				<div class="questionBody">
+
+					<div class="questionInputs">
+
+						<table>
+						
+							<tbody>
+						
+								<tr>
+						
+									<td><input type="number" id="volumeAI" onchange="calculateAI();" placeholder="Yearly volume"></td>
+						
+									<td><input type="number" id="timeAI" onchange="calculateAI();" placeholder="Minutes per transaction"></td>
+						
+								</tr>
+						
+								<tr>
+						
+									<td colspan="2"><div id="savingsAI" class="savingsOutput"></div></td>
+						
+								</tr>
+						
+							</tbody>
+						
+						</table>
+
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="calculateButtonContainer">
+		
+			<!-- Calculate Button -->
+			<div class="calculateButton"><input type="button" onclick="calculate()" value="Calculate Savings!"></div>
+
+		</div>
+
+		<div class="resultsContainer">
+		
+			<div id="result" class="resultingCalculation"></div>
+
+		</div>
+	
+
+</body></html>
